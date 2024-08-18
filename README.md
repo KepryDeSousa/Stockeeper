@@ -21,6 +21,8 @@ Requisitos Não Funcionais:
 Desenho do Sistema:
 
 - Criar diagramas de classes e fluxogramas (já iniciado na imagem anexada)
+
+
 - Definir a arquitetura de software (MVC - Model-View-Controller)
 
 Fase 2: Desenvolvimento
