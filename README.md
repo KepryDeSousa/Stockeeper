@@ -1,7 +1,7 @@
 ## 1. Definição do Projeto
 <img src="Logo/WhatsApp Image 2024-08-16 at 8.00.15 PM (2).jpeg" alt="alt text" width="120" height="120" align="center"> Nome do Projeto: *Stockeeper* 
 
-    (PDV offline focado em pequenos negócios)
+#### (PDV offline focado em pequenos negócios)
 
    
 
