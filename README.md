@@ -21,7 +21,7 @@ Requisitos Não Funcionais:
 Desenho do Sistema:
 
 - Criar diagramas de classes e fluxogramas (já iniciado na imagem anexada)
-
+![alt text](UML's/StockKeeper.drawio.png)
 
 - Definir a arquitetura de software (MVC - Model-View-Controller)
 
