@@ -86,10 +86,10 @@ Controle de Versão: Git (GitHub ou GitLab)
 Testes: Pytest, Testes de Interface com QTest
 Documentação: Sphinx, Markdown para documentação técnica e de usuário
 ## 4. Cronograma
-Semana 1-2: Planejamento e definição de requisitos
-Semana 3-6: Desenvolvimento do primeiro e segundo ciclo
-Semana 7-8: Testes e ajustes
-Semana 9: Implantação e entrega final
+* Semana 1-2: Planejamento e definição de requisitos
+* Semana 3-6: Desenvolvimento do primeiro e segundo ciclo
+* Semana 7-8: Testes e ajustes
+* Semana 9: Implantação e entrega final
 ## 5. Feedback e Iteração
 Ao final de cada ciclo de desenvolvimento, realizar revisões com stakeholders para ajustar o projeto conforme necessário.
 ## 6. Considerações Finais
