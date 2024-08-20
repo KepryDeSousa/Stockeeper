@@ -1,0 +1,7 @@
+# Ignorar diretórios de ambientes virtuais
+venv/
+env/
+
+# Ignorar pacotes instalados pelo pip em um ambiente virtual local
+Lib/site-packages/
+lib/python*/site-packages/
