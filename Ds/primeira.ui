@@ -6,40 +6,32 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>632</width>
-    <height>412</height>
+    <width>800</width>
+    <height>600</height>
    </rect>
   </property>
   <property name="windowTitle">
    <string>MainWindow</string>
   </property>
   <widget class="QWidget" name="centralwidget">
-   <widget class="QWidget" name="Left" native="true">
+   <widget class="QWidget" name="left" native="true">
     <property name="geometry">
      <rect>
       <x>0</x>
-      <y>0</y>
-      <width>301</width>
-      <height>411</height>
+      <y>10</y>
+      <width>421</width>
+      <height>521</height>
      </rect>
-    </property>
-    <property name="styleSheet">
-     <string notr="true">#leftmenu{
-	background-color: #2596be;
-}</string>
     </property>
    </widget>
-   <widget class="QWidget" name="Main" native="true">
+   <widget class="QWidget" name="right" native="true">
     <property name="geometry">
      <rect>
-      <x>300</x>
-      <y>0</y>
-      <width>331</width>
-      <height>411</height>
+      <x>420</x>
+      <y>10</y>
+      <width>371</width>
+      <height>521</height>
      </rect>
-    </property>
-    <property name="styleSheet">
-     <string notr="true">backgroud-color: rgb(57, 255, 136)</string>
     </property>
    </widget>
   </widget>

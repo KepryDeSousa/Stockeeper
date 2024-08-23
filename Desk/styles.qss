@@ -1,0 +1,20 @@
+/* Aplica estilos a todos os widgets */
+QWidget {
+    background-color: #87CEEB;
+    border-radius: 10px; /* Adiciona bordas redondas */
+}
+
+/* Aplica estilos a todos os botões */
+QPushButton {
+    background-color: #3498db;
+    color: white;
+    border: none;
+    padding: 10px;
+    border-radius: 5px;
+}
+
+/* Aplica estilos a rótulos */
+QLabel {
+    font-size: 18px;
+    color: #2c3e50;
+}
