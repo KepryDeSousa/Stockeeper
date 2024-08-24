@@ -51,12 +51,12 @@ class MyWindow(QMainWindow):
             action.triggered.connect(action_func)
 
     def setup_layout(self):
-        # Criar e definir o layout principal
+        # Criando a interface
         central_widget = QWidget()
         layout = QVBoxLayout(central_widget)
         self.setCentralWidget(central_widget)
 
-        # Aqui você pode adicionar outros widgets ao layout conforme necessário
+       
         label = QLabel("Bem-vindo ao Stockeeper")
         label.setAlignment(Qt.AlignmentFlag.AlignCenter)
         layout.addWidget(label)
