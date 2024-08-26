@@ -1,7 +1,7 @@
 /* Aplica estilos a todos os widgets */
 QWidget {
-    background-color: #87CEEB;
-    border-radius: 10px; /* Adiciona bordas redondas */
+    background-color: white;
+    border-radius: 12px; /* Adiciona bordas redondas */
 }
 
 /* Aplica estilos a todos os botões */

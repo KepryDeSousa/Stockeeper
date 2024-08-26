@@ -2,7 +2,7 @@ from PyQt6.QtGui import QIcon, QPixmap
 from PyQt6.QtCore import Qt
 from PyQt6.QtWidgets import (
     QApplication, QWidget, QLabel, QPushButton, QVBoxLayout, 
-    QMainWindow, QHBoxLayout, QStackedWidget, QGroupBox, QScrollArea
+    QMainWindow, QHBoxLayout, QStackedWidget, QGroupBox
 )
 
 class MyWindow(QMainWindow):
@@ -19,6 +19,7 @@ class MyWindow(QMainWindow):
         icon = QIcon(QPixmap('Logo/WhatsApp Image 2024-08-16 at 8.00.15 PM (2).jpeg'))
         self.setWindowIcon(icon)
         self.setWindowTitle("Stockeeper")
+        self.setWindowOpacity(0.90)
 
         screen = QApplication.primaryScreen()
         screen_size = screen.availableGeometry()
@@ -35,7 +36,7 @@ class MyWindow(QMainWindow):
         # Adiciona ações aos botões do menu lateral
         self.menu_actions = {
             'Início': lambda: self.stacked_widget.setCurrentWidget(self.start_page),
-            'Cadastro': self.toggle_cadastro_options,
+            'Cadastro': self.show_cadastro_page,
             'Ferramentas': self.show_ferramentas_page,
             'Ajuda': self.show_ajuda_page
         }
@@ -56,28 +57,6 @@ class MyWindow(QMainWindow):
             button.setStyleSheet("font-size: 14px;")  # Ajuste do estilo dos botões
             self.menu_layout.addWidget(button)
 
-        # Cria um container para as opções de cadastro
-        self.cadastro_container = QGroupBox()
-        self.cadastro_container.setStyleSheet("border: none;")
-        self.cadastro_layout = QVBoxLayout(self.cadastro_container)
-        self.cadastro_container.setVisible(False)  # Inicialmente escondido
-
-        # Adiciona os botões de cadastro ao container
-        cadastro_options = {
-            'Clientes': self.show_clientes_page,
-            'Produtos': self.show_produtos_page,
-            'Fornecedores': self.show_fornecedores_page,
-            'Funcionários': self.show_funcionarios_page,
-            'Usuários': self.show_usuarios_page
-        }
-        
-        for option, action in cadastro_options.items():
-            button = QPushButton(option)
-            button.setStyleSheet("font-size: 14px; margin: 5px;")
-            button.clicked.connect(action)
-            self.cadastro_layout.addWidget(button)
-        
-        self.menu_layout.addWidget(self.cadastro_container)  # Adiciona o container ao menu lateral
         self.menu_layout.addStretch()  # Adiciona um espaçamento flexível no final do menu
 
     def setup_layout(self):
@@ -94,11 +73,13 @@ class MyWindow(QMainWindow):
 
         # Adiciona páginas ao QStackedWidget
         self.start_page = self.create_page("Bem-vindo ao Stockeeper")
-        self.ferramentas_page = self.create_page("Página de Ferramentas")
-        self.ajuda_page = self.create_page("Página de Ajuda")
+        self.cadastro_page = self.create_cadastro_page()
+        self.ferramentas_page = self.create_ferramentas_page()
+        self.ajuda_page = self.create_ajuda_page()
 
         # Adiciona os widgets ao QStackedWidget
         self.stacked_widget.addWidget(self.start_page)
+        self.stacked_widget.addWidget(self.cadastro_page)
         self.stacked_widget.addWidget(self.ferramentas_page)
         self.stacked_widget.addWidget(self.ajuda_page)
 
@@ -113,12 +94,8 @@ class MyWindow(QMainWindow):
             self.menu_widget.setFixedWidth(0)  # Esconde o menu
             self.toggle_button.setText(">")
 
-    def toggle_cadastro_options(self):
-        # Alterna a visibilidade do painel de opções de cadastro
-        if self.cadastro_container.isVisible():
-            self.cadastro_container.setVisible(False)
-        else:
-            self.cadastro_container.setVisible(True)
+    def show_cadastro_page(self):
+        self.stacked_widget.setCurrentWidget(self.cadastro_page)
 
     def show_ferramentas_page(self):
         self.stacked_widget.setCurrentWidget(self.ferramentas_page)
@@ -135,6 +112,101 @@ class MyWindow(QMainWindow):
         layout.addWidget(label, alignment=Qt.AlignmentFlag.AlignCenter)
         return page
 
+    def create_cadastro_page(self):
+        page = QWidget()
+        layout = QVBoxLayout(page)
+
+        # Cria um QGroupBox para os botões de cadastro
+        group_box = QGroupBox("Escolha uma opção de Cadastro")
+        group_box_layout = QVBoxLayout(group_box)
+
+        # Ajusta o estilo e margens do QGroupBox
+        group_box_layout.setContentsMargins(10, 60, 10, 10)  # Margem superior ajustada
+        group_box.setStyleSheet("font-size: 16px; font-weight: bold;")
+
+        # Adiciona os botões de cadastro dentro do QGroupBox
+        cadastro_options = {
+            'Clientes': self.show_clientes_page,
+            'Produtos': self.show_produtos_page,
+            'Fornecedores': self.show_fornecedores_page,
+            'Funcionários': self.show_funcionarios_page,
+            'Usuários': self.show_usuarios_page
+        }
+        
+        for option, action in cadastro_options.items():
+            button = QPushButton(option)
+            button.setFixedWidth(150)  # Define a largura fixa dos botões
+            button.setStyleSheet("font-size: 14px; margin: 5px;")
+            button.clicked.connect(action)
+            group_box_layout.addWidget(button)
+
+        # Centraliza o QGroupBox na página de cadastro
+        layout.addWidget(group_box, alignment=Qt.AlignmentFlag.AlignCenter)
+        
+        return page
+
+    def create_ferramentas_page(self):
+        page = QWidget()
+        layout = QVBoxLayout(page)
+
+        # Cria um QGroupBox para as opções de ferramentas
+        group_box = QGroupBox("Ferramentas")
+        group_box_layout = QVBoxLayout(group_box)
+
+        # Ajusta o estilo e margens do QGroupBox
+        group_box_layout.setContentsMargins(10, 60, 10, 10)  # Margem superior ajustada
+        group_box.setStyleSheet("font-size: 16px; font-weight: bold;")
+
+        # Adiciona os botões de ferramentas dentro do QGroupBox
+        ferramentas_options = {
+            'Backup': self.show_backup_page,
+            'Configurações': self.show_configuracoes_page,
+            'Relatórios': self.show_relatorios_page
+        }
+        
+        for option, action in ferramentas_options.items():
+            button = QPushButton(option)
+            button.setFixedWidth(150)  # Define a largura fixa dos botões
+            button.setStyleSheet("font-size: 14px; margin: 5px;")
+            button.clicked.connect(action)
+            group_box_layout.addWidget(button)
+
+        # Centraliza o QGroupBox na página de ferramentas
+        layout.addWidget(group_box, alignment=Qt.AlignmentFlag.AlignCenter)
+        
+        return page
+
+    def create_ajuda_page(self):
+        page = QWidget()
+        layout = QVBoxLayout(page)
+
+        # Cria um QGroupBox para as opções de ajuda
+        group_box = QGroupBox("Ajuda")
+        group_box_layout = QVBoxLayout(group_box)
+
+        # Ajusta o estilo e margens do QGroupBox
+        group_box_layout.setContentsMargins(10, 60, 10, 10)  # Margem superior ajustada
+        group_box.setStyleSheet("font-size: 16px; font-weight: bold;")
+
+        # Adiciona os botões de ajuda dentro do QGroupBox
+        ajuda_options = {
+            'Documentação': self.show_documentacao_page,
+            'Suporte': self.show_suporte_page,
+            'Sobre': self.show_sobre_page
+        }
+        
+        for option, action in ajuda_options.items():
+            button = QPushButton(option)
+            button.setFixedWidth(150)  # Define a largura fixa dos botões
+            button.setStyleSheet("font-size: 14px; margin: 5px;")
+            button.clicked.connect(action)
+            group_box_layout.addWidget(button)
+
+        # Centraliza o QGroupBox na página de ajuda
+        layout.addWidget(group_box, alignment=Qt.AlignmentFlag.AlignCenter)
+        
+        return page
+
     def show_clientes_page(self):
         self.stacked_widget.setCurrentWidget(self.create_details_page("Clientes"))
 
@@ -149,6 +221,24 @@ class MyWindow(QMainWindow):
 
     def show_usuarios_page(self):
         self.stacked_widget.setCurrentWidget(self.create_details_page("Usuários"))
+
+    def show_backup_page(self):
+        self.stacked_widget.setCurrentWidget(self.create_details_page("Backup"))
+
+    def show_configuracoes_page(self):
+        self.stacked_widget.setCurrentWidget(self.create_details_page("Configurações"))
+
+    def show_relatorios_page(self):
+        self.stacked_widget.setCurrentWidget(self.create_details_page("Relatórios"))
+
+    def show_documentacao_page(self):
+        self.stacked_widget.setCurrentWidget(self.create_details_page("Documentação"))
+
+    def show_suporte_page(self):
+        self.stacked_widget.setCurrentWidget(self.create_details_page("Suporte"))
+
+    def show_sobre_page(self):
+        self.stacked_widget.setCurrentWidget(self.create_details_page("Sobre"))
 
     def create_details_page(self, title):
         page = QWidget()
