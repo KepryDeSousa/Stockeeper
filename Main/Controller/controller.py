@@ -1,7 +1,6 @@
 # controllers.py
-from PyQt6.QtCore import Qt  # Adicione esta linha para importar Qt
-from Main.Model.models import Produto
-from ..View.views import MyWindow
+from PyQt6.QtCore import Qt
+from Model.models import Produto
 from PyQt6.QtWidgets import QWidget, QVBoxLayout, QGroupBox, QPushButton
 
 class ProductController:
@@ -15,20 +14,23 @@ class ProductController:
         # Atualize a view se necessário
 
     def show_cadastro_page(self):
-        self.view.stacked_widget.setCurrentWidget(self.view.create_cadastro_page())
+        if self.view:
+            self.view.stacked_widget.setCurrentWidget(self.view.create_cadastro_page())
 
     def show_ferramentas_page(self):
-        self.view.stacked_widget.setCurrentWidget(self.view.create_ferramentas_page())
+        if self.view:
+            self.view.stacked_widget.setCurrentWidget(self.view.create_ferramentas_page())
 
     def show_ajuda_page(self):
-        self.view.stacked_widget.setCurrentWidget(self.view.create_ajuda_page())
+        if self.view:
+            self.view.stacked_widget.setCurrentWidget(self.view.create_ajuda_page())
 
     def create_cadastro_page(self):
         page = QWidget()
         layout = QVBoxLayout(page)
 
         group_box = QGroupBox("Escolha uma opção de Cadastro")
-        group_box.setAlignment(Qt.AlignmentFlag.AlignCenter)  # Usa a constante Qt.AlignmentFlag.AlignCenter
+        group_box.setAlignment(Qt.AlignmentFlag.AlignCenter)
         group_box_layout = QVBoxLayout(group_box)
         group_box_layout.setContentsMargins(14, 68, 10, 10)
         group_box.setStyleSheet("font-size: 16px; font-weight: bold;")

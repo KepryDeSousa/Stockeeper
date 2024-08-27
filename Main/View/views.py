@@ -1,4 +1,3 @@
-# views.py
 from PyQt6.QtGui import QIcon, QPixmap
 from PyQt6.QtCore import Qt
 from PyQt6.QtWidgets import (
@@ -101,6 +100,8 @@ class MyWindow(QMainWindow):
         layout = QVBoxLayout(page)
         label = QLabel(f"Detalhes para {title}")
         label.setAlignment(Qt.AlignmentFlag.AlignCenter)
+        label.setStyleSheet("font-size: 18px; font-weight: bold; margin-top: 20px;")
+        layout.addWidget(label, alignment=Qt.AlignmentFlag.AlignCenter)
         label.setStyleSheet("font-size: 18px; font-weight: bold; margin-top: 20px;")
         layout.addWidget(label, alignment=Qt.AlignmentFlag.AlignCenter)
         return page
