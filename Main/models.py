@@ -1,3 +1,4 @@
+# models.py
 class Produto:
     def __init__(self, id: int, nome: str, preco: float, quantidade: int):
         self.id = id

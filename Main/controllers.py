@@ -1,7 +1,7 @@
 # controllers.py
 from PyQt6.QtCore import Qt
-from Model.models import Produto
 from PyQt6.QtWidgets import QWidget, QVBoxLayout, QGroupBox, QPushButton
+from models import Produto
 
 class ProductController:
     def __init__(self, view):
@@ -14,16 +14,13 @@ class ProductController:
         # Atualize a view se necessário
 
     def show_cadastro_page(self):
-        if self.view:
-            self.view.stacked_widget.setCurrentWidget(self.view.create_cadastro_page())
+        self.view.stacked_widget.setCurrentWidget(self.view.cadastro_page)
 
     def show_ferramentas_page(self):
-        if self.view:
-            self.view.stacked_widget.setCurrentWidget(self.view.create_ferramentas_page())
+        self.view.stacked_widget.setCurrentWidget(self.view.ferramentas_page)
 
     def show_ajuda_page(self):
-        if self.view:
-            self.view.stacked_widget.setCurrentWidget(self.view.create_ajuda_page())
+        self.view.stacked_widget.setCurrentWidget(self.view.ajuda_page)
 
     def create_cadastro_page(self):
         page = QWidget()
