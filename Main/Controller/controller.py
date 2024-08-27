@@ -1,7 +1,7 @@
 # controllers.py
 from PyQt6.QtCore import Qt  # Adicione esta linha para importar Qt
-from models import Produto
-from views import MyWindow
+from Main.Model.models import Produto
+from ..View.views import MyWindow
 from PyQt6.QtWidgets import QWidget, QVBoxLayout, QGroupBox, QPushButton
 
 class ProductController:

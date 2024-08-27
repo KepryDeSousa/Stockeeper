@@ -1,7 +1,9 @@
 # main.py
 from PyQt6.QtWidgets import QApplication
-from views import MyWindow
-from controller import ProductController
+from View.views import MyWindow
+from Controller.controller import ProductController
+
+
 
 def apply_stylesheet(app):
     with open('Desk/styles.qss', 'r') as file:
