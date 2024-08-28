@@ -5,34 +5,31 @@
         <mxCell id="0" />
         <mxCell id="1" parent="0" />
         <mxCell id="2" value="SistemaControleDeEst" style="swimlane;fontStyle=1;align=center;verticalAlign=top;childLayout=stackLayout;horizontal=1;startSize=26.162878036499023;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=0;marginBottom=0;" parent="1" vertex="1">
-          <mxGeometry x="460" y="8" width="274" height="217" as="geometry" />
+          <mxGeometry x="460" y="8" width="274" height="190.16287803649902" as="geometry" />
         </mxCell>
         <mxCell id="3" value="+List produtos" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;" parent="2" vertex="1">
-          <mxGeometry y="26" width="274" height="26" as="geometry" />
+          <mxGeometry y="26.162878036499023" width="274" height="26" as="geometry" />
         </mxCell>
         <mxCell id="4" value="+List funcionarios" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;" parent="2" vertex="1">
-          <mxGeometry y="52" width="274" height="26" as="geometry" />
-        </mxCell>
-        <mxCell id="5" value="+List clientes" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;" parent="2" vertex="1">
-          <mxGeometry y="78" width="274" height="26" as="geometry" />
+          <mxGeometry y="52.16287803649902" width="274" height="26" as="geometry" />
         </mxCell>
         <mxCell id="6" value="+List vendas" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;" parent="2" vertex="1">
-          <mxGeometry y="105" width="274" height="26" as="geometry" />
+          <mxGeometry y="78.16287803649902" width="274" height="26" as="geometry" />
         </mxCell>
         <mxCell id="7" value="+List compras" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;" parent="2" vertex="1">
-          <mxGeometry y="131" width="274" height="26" as="geometry" />
+          <mxGeometry y="104.16287803649902" width="274" height="26" as="geometry" />
         </mxCell>
         <mxCell id="8" style="line;strokeWidth=1;fillColor=none;align=left;verticalAlign=middle;spacingTop=-1;spacingLeft=3;spacingRight=3;rotatable=0;labelPosition=right;points=[];portConstraint=eastwest;strokeColor=inherit;" parent="2" vertex="1">
-          <mxGeometry y="157" width="274" height="8" as="geometry" />
+          <mxGeometry y="130.16287803649902" width="274" height="8" as="geometry" />
         </mxCell>
         <mxCell id="9" value="+gerarRelatorioDeVendas() : : void" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;" parent="2" vertex="1">
-          <mxGeometry y="165" width="274" height="26" as="geometry" />
+          <mxGeometry y="138.16287803649902" width="274" height="26" as="geometry" />
         </mxCell>
         <mxCell id="10" value="+gerarRelatorioDeCompras() : : void" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;" parent="2" vertex="1">
-          <mxGeometry y="191" width="274" height="26" as="geometry" />
+          <mxGeometry y="164.16287803649902" width="274" height="26" as="geometry" />
         </mxCell>
         <mxCell id="11" value="Produto" style="swimlane;fontStyle=1;align=center;verticalAlign=top;childLayout=stackLayout;horizontal=1;startSize=27.287877400716145;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=0;marginBottom=0;" parent="1" vertex="1">
-          <mxGeometry x="8" y="275" width="208" height="199.28787740071613" as="geometry" />
+          <mxGeometry x="8" y="275" width="208" height="239.9978774007161" as="geometry" />
         </mxCell>
         <mxCell id="12" value="-int id" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;" parent="11" vertex="1">
           <mxGeometry y="27.287877400716145" width="208" height="27" as="geometry" />
@@ -49,11 +46,11 @@
         <mxCell id="16" style="line;strokeWidth=1;fillColor=none;align=left;verticalAlign=middle;spacingTop=-1;spacingLeft=3;spacingRight=3;rotatable=0;labelPosition=right;points=[];portConstraint=eastwest;strokeColor=inherit;" parent="11" vertex="1">
           <mxGeometry y="135.28787740071613" width="208" height="8" as="geometry" />
         </mxCell>
-        <mxCell id="17" value="+getCustoTotal() : : double&#xa;+AdicionaItem() :: List&#xa;" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;" parent="11" vertex="1">
-          <mxGeometry y="143.28787740071613" width="208" height="56" as="geometry" />
+        <mxCell id="17" value="+getCustoTotal() : : double&#xa;&#xa;+AdicionaItem() :: List&#xa;&#xa;+ RealizarVenda() :: int" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;" parent="11" vertex="1">
+          <mxGeometry y="143.28787740071613" width="208" height="96.71" as="geometry" />
         </mxCell>
         <mxCell id="18" value="Funcionario" style="swimlane;fontStyle=1;align=center;verticalAlign=top;childLayout=stackLayout;horizontal=1;startSize=27.287877400716145;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=0;marginBottom=0;" parent="1" vertex="1">
-          <mxGeometry x="266" y="275" width="189" height="199.99787740071613" as="geometry" />
+          <mxGeometry x="266" y="275" width="189" height="179.99787740071613" as="geometry" />
         </mxCell>
         <mxCell id="19" value="-int id" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;" parent="18" vertex="1">
           <mxGeometry y="27.287877400716145" width="189" height="27" as="geometry" />
@@ -67,11 +64,11 @@
         <mxCell id="23" style="line;strokeWidth=1;fillColor=none;align=left;verticalAlign=middle;spacingTop=-1;spacingLeft=3;spacingRight=3;rotatable=0;labelPosition=right;points=[];portConstraint=eastwest;strokeColor=inherit;" parent="18" vertex="1">
           <mxGeometry y="108.28787740071614" width="189" height="8" as="geometry" />
         </mxCell>
-        <mxCell id="24" value="+realizarVenda() : : void&#xa;&#xa;+ Venda Troco() ::double&#xa;&#xa;" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;" parent="18" vertex="1">
-          <mxGeometry y="116.28787740071614" width="189" height="83.71" as="geometry" />
+        <mxCell id="24" value="+ Produto RealizarVenda() : : void&#xa;&#xa;+ Venda Troco() ::double&#xa;&#xa;&#xa;&#xa;" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;" parent="18" vertex="1">
+          <mxGeometry y="116.28787740071614" width="189" height="63.71" as="geometry" />
         </mxCell>
         <mxCell id="32" value="Venda" style="swimlane;fontStyle=1;align=center;verticalAlign=top;childLayout=stackLayout;horizontal=1;startSize=27.287877400716145;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=0;marginBottom=0;" parent="1" vertex="1">
-          <mxGeometry x="710" y="274.14" width="232" height="143.28787740071613" as="geometry" />
+          <mxGeometry x="700" y="276.71" width="232" height="169.99787740071613" as="geometry" />
         </mxCell>
         <mxCell id="33" value="-int id" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;" parent="32" vertex="1">
           <mxGeometry y="27.287877400716145" width="232" height="27" as="geometry" />
@@ -85,11 +82,11 @@
         <mxCell id="37" style="line;strokeWidth=1;fillColor=none;align=left;verticalAlign=middle;spacingTop=-1;spacingLeft=3;spacingRight=3;rotatable=0;labelPosition=right;points=[];portConstraint=eastwest;strokeColor=inherit;" parent="32" vertex="1">
           <mxGeometry y="108.28787740071614" width="232" height="8" as="geometry" />
         </mxCell>
-        <mxCell id="38" value="+Troco() :: double" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;" parent="32" vertex="1">
-          <mxGeometry y="116.28787740071614" width="232" height="27" as="geometry" />
+        <mxCell id="38" value="+Troco() :: double&#xa;&#xa;+ Caixa AtualizarFluxo()::void" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;" parent="32" vertex="1">
+          <mxGeometry y="116.28787740071614" width="232" height="53.71" as="geometry" />
         </mxCell>
         <mxCell id="39" value="Compra" style="swimlane;fontStyle=1;align=center;verticalAlign=top;childLayout=stackLayout;horizontal=1;startSize=27.287877400716145;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=0;marginBottom=0;" parent="1" vertex="1">
-          <mxGeometry x="960" y="276.71" width="205" height="209.9978774007161" as="geometry" />
+          <mxGeometry x="960" y="276.71" width="205" height="239.9978774007161" as="geometry" />
         </mxCell>
         <mxCell id="40" value="-int id" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;" parent="39" vertex="1">
           <mxGeometry y="27.287877400716145" width="205" height="27" as="geometry" />
@@ -106,16 +103,11 @@
         <mxCell id="44" style="line;strokeWidth=1;fillColor=none;align=left;verticalAlign=middle;spacingTop=-1;spacingLeft=3;spacingRight=3;rotatable=0;labelPosition=right;points=[];portConstraint=eastwest;strokeColor=inherit;" parent="39" vertex="1">
           <mxGeometry y="135.28787740071613" width="205" height="8" as="geometry" />
         </mxCell>
-        <mxCell id="45" value="+Produto AdicionaItem() :: List&#xa;+Adiciona" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;" parent="39" vertex="1">
-          <mxGeometry y="143.28787740071613" width="205" height="66.71" as="geometry" />
-        </mxCell>
-        <mxCell id="fFLkFw_sC1ooDxviOaCB-68" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0;exitY=0;exitDx=0;exitDy=0;" parent="1" source="46" edge="1">
-          <mxGeometry relative="1" as="geometry">
-            <mxPoint x="1030" y="510" as="targetPoint" />
-          </mxGeometry>
+        <mxCell id="45" value="+Produto AdicionaItem() :: List&#xa;&#xa;+ConfirmacaoCompra():: bool&#xa;&#xa;+" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;" parent="39" vertex="1">
+          <mxGeometry y="143.28787740071613" width="205" height="96.71" as="geometry" />
         </mxCell>
         <mxCell id="46" value="Fornecedor" style="swimlane;fontStyle=1;align=center;verticalAlign=top;childLayout=stackLayout;horizontal=1;startSize=26.25589158799913;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=0;marginBottom=0;" parent="1" vertex="1">
-          <mxGeometry x="995.5" y="500" width="134" height="117.25589158799913" as="geometry" />
+          <mxGeometry x="995.5" y="540" width="134" height="117.25589158799913" as="geometry" />
         </mxCell>
         <mxCell id="47" value="-int id" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;" parent="46" vertex="1">
           <mxGeometry y="26.25589158799913" width="134" height="26" as="geometry" />
