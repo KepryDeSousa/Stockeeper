@@ -92,6 +92,4 @@ Documentação: Sphinx, Markdown para documentação técnica e de usuário
 * Semana 9: Implantação e entrega final
 ## 5. Feedback e Iteração
 Ao final de cada ciclo de desenvolvimento, realizar revisões com stakeholders para ajustar o projeto conforme necessário.
-## 6. Considerações Finais
-Garantir que o sistema seja modular para facilitar futuras atualizações.
-Manter a documentação atualizada em todas as fases do projeto.
+
