@@ -5,7 +5,7 @@
         <mxCell id="0" />
         <mxCell id="1" parent="0" />
         <mxCell id="2" value="Estoque" style="swimlane;fontStyle=1;align=center;verticalAlign=top;childLayout=stackLayout;horizontal=1;startSize=26.162878036499023;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=0;marginBottom=0;" parent="1" vertex="1">
-          <mxGeometry x="412" y="170" width="274" height="190.16287803649902" as="geometry" />
+          <mxGeometry x="412" y="170" width="274" height="220.00287803649903" as="geometry" />
         </mxCell>
         <mxCell id="3" value="+List produtos" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;" parent="2" vertex="1">
           <mxGeometry y="26.162878036499023" width="274" height="26" as="geometry" />
@@ -25,8 +25,8 @@
         <mxCell id="9" value="+gerarRelatorioDeVendas() : : void" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;" parent="2" vertex="1">
           <mxGeometry y="138.16287803649902" width="274" height="26" as="geometry" />
         </mxCell>
-        <mxCell id="10" value="+gerarRelatorioDeCompras() : : void" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;" parent="2" vertex="1">
-          <mxGeometry y="164.16287803649902" width="274" height="26" as="geometry" />
+        <mxCell id="10" value="+gerarRelatorioDeCompras() : : void&#xa;&#xa;+GerarRelatorioTemporal() :: void" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;" parent="2" vertex="1">
+          <mxGeometry y="164.16287803649902" width="274" height="55.84" as="geometry" />
         </mxCell>
         <mxCell id="11" value="Produto" style="swimlane;fontStyle=1;align=center;verticalAlign=top;childLayout=stackLayout;horizontal=1;startSize=27.287877400716145;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=0;marginBottom=0;" parent="1" vertex="1">
           <mxGeometry y="389.99999999999994" width="208" height="239.9978774007161" as="geometry" />
