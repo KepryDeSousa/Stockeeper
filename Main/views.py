@@ -1,4 +1,3 @@
-# views.py
 from PyQt6.QtWidgets import QMainWindow, QApplication, QWidget, QVBoxLayout, QHBoxLayout, QStackedWidget, QPushButton, QLabel, QGroupBox
 from PyQt6.QtGui import QIcon, QPixmap
 from PyQt6.QtCore import Qt
