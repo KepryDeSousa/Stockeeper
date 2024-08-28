@@ -11,10 +11,9 @@ if __name__ == "__main__":
     app = QApplication([])
     apply_stylesheet(app)
 
-    # Inicializa o controlador e a visão
-    controller = Controller()  # Inicializa o controlador
-    view = MyWindow(controller)  # Passa o controlador para a visão
-    controller.window = view  # Conecta o controlador à visão
+   
+    controller = Controller()  
+    view = MyWindow(controller) 
+    controller.window = view  
 
     view.show()
-    app.exec()

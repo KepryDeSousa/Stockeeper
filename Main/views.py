@@ -6,7 +6,7 @@ class MyWindow(QMainWindow):
     def __init__(self, controller):
         super().__init__()
         self.controller = controller
-        self.init_ui()
+        self.init_ui() #Starter interface function
 
     def init_ui(self):
         self.setup_window()
@@ -14,7 +14,7 @@ class MyWindow(QMainWindow):
         self.setup_layout()
 
     def setup_window(self):
-        icon = QIcon(QPixmap('Logo/WhatsApp Image 2024-08-16 at 8.00.15 PM (2).jpeg'))
+        icon = QIcon(QPixmap('Main/styles/Logo/WhatsApp Image 2024-08-16 at 8.00.15 PM (2).jpeg'))
         self.setWindowIcon(icon)
         self.setWindowTitle("Stockeeper")
         self.setWindowOpacity(0.90)
@@ -40,7 +40,7 @@ class MyWindow(QMainWindow):
 
         self.menu_widget = QWidget()
         self.menu_layout = QVBoxLayout(self.menu_widget)
-        self.menu_widget.setFixedWidth(0)  # Inicialmente escondido
+        self.menu_widget.setFixedWidth(0) 
 
         self.toggle_button = QPushButton(">")
         self.toggle_button.clicked.connect(self.toggle_menu)
