@@ -12,7 +12,6 @@ Requisitos Funcionais:
 
 - Gestão de produtos (adicionar, editar, remover, listar)
 - Gestão de funcionários
-- Gestão de clientes
 - Registro de vendas e compras
 - Geração de relatórios de vendas e compras
 - Interface amigável e intuitiva
