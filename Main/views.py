@@ -140,8 +140,9 @@ class MyWindow(QMainWindow):
 
         ferramentas_options = {
             'Backup': lambda: self.stacked_widget.setCurrentWidget(self.create_details_page("Backup")),
+            'Relatórios': lambda: self.stacked_widget.setCurrentWidget(self.create_details_page("Relatórios")),
+            'Estoque': lambda: self.stacked_widget.setCurrentWidget(self.create_details_page("Estoque")),
             'Configurações': lambda: self.stacked_widget.setCurrentWidget(self.create_details_page("Configurações")),
-            'Relatórios': lambda: self.stacked_widget.setCurrentWidget(self.create_details_page("Relatórios"))
         }
 
         for option, action in ferramentas_options.items():

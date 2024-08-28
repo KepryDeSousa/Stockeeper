@@ -1,10 +1,9 @@
-# main.py
 from PyQt6.QtWidgets import QApplication
 from views import MyWindow
-from controllers import ProductController
+from controllers import Controller
 
 def apply_stylesheet(app):
-    with open('styles/styles.qss', 'r') as file:
+    with open('Main/styles/styles.qss', 'r') as file:
         style = file.read()
     app.setStyleSheet(style)
 
@@ -13,9 +12,9 @@ if __name__ == "__main__":
     apply_stylesheet(app)
 
     # Inicializa o controlador e a visão
-    controller = ProductController(None)  # Passaremos a visão depois
-    view = MyWindow(controller)
-    controller.view = view  # Conecta o controlador à visão
+    controller = Controller()  # Inicializa o controlador
+    view = MyWindow(controller)  # Passa o controlador para a visão
+    controller.window = view  # Conecta o controlador à visão
 
     view.show()
     app.exec()
