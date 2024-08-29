@@ -8,6 +8,10 @@ class Controller:
         self.window.show()
         self.app.exec()
 
+
+    def show_caixa_page(self):
+        self.window.stacked_widget.setCurrentWidget(self.window.caixa_page)
+
     def show_cadastro_page(self):
         self.window.stacked_widget.setCurrentWidget(self.window.cadastro_page)
 
@@ -16,6 +20,8 @@ class Controller:
 
     def show_ajuda_page(self):
         self.window.stacked_widget.setCurrentWidget(self.window.ajuda_page)
+    
+
 
 if __name__ == "__main__":
     controller = Controller()
