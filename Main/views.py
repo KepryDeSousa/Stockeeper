@@ -33,6 +33,7 @@ class MyWindow(QMainWindow):
     def setup_menu(self):
         self.menu_actions = {
             'Início': lambda: self.stacked_widget.setCurrentWidget(self.start_page),
+            'Caixa': self.controller.show_caixa_page,
             'Cadastro': self.controller.show_cadastro_page,
             'Ferramentas': self.controller.show_ferramentas_page,
             'Ajuda': self.controller.show_ajuda_page
@@ -67,13 +68,16 @@ class MyWindow(QMainWindow):
         self.cadastro_page = self.create_cadastro_page()
         self.ferramentas_page = self.create_ferramentas_page()
         self.ajuda_page = self.create_ajuda_page()
+        self.caixa_page = self.create_caixa_page()
 
         self.stacked_widget.addWidget(self.start_page)
+        self.stacked_widget.addWidget(self.caixa_page)
         self.stacked_widget.addWidget(self.cadastro_page)
         self.stacked_widget.addWidget(self.ferramentas_page)
         self.stacked_widget.addWidget(self.ajuda_page)
 
         self.setCentralWidget(central_widget)
+
 
     def toggle_menu(self):
         if self.menu_widget.width() == 0:
@@ -101,12 +105,17 @@ class MyWindow(QMainWindow):
         layout.addWidget(label, alignment=Qt.AlignmentFlag.AlignCenter)
         return page
 
+
+    # The following functions are responsible for creating the pages for each menu option
+
+
+
     def create_cadastro_page(self):
         page = QWidget()
         layout = QVBoxLayout(page)
 
-        group_box = QGroupBox("Escolha uma opção de Cadastro")
-        group_box.setAlignment(Qt.AlignmentFlag.AlignCenter)
+        group_box = QGroupBox("Cadastro")
+
         group_box_layout = QVBoxLayout(group_box)
         group_box_layout.setContentsMargins(14, 68, 10, 10)
         group_box.setStyleSheet("font-size: 16px; font-weight: bold;")
@@ -122,12 +131,37 @@ class MyWindow(QMainWindow):
             button = QPushButton(option)
             button.setFixedWidth(150)
             button.setStyleSheet("font-size: 14px; margin: 5px;")
-            button.clicked.connect(action)
+            button.clicked.connect(action) # Connect the button to the action when clicked
             group_box_layout.addWidget(button)
 
         layout.addWidget(group_box, alignment=Qt.AlignmentFlag.AlignCenter)
         return page
 
+
+    def create_caixa_page(self):
+        page = QWidget()
+        layout = QVBoxLayout(page)# Vertical layout
+        label = QLabel("Caixa")
+
+        grupo_box= QGroupBox('Caixa')
+        grupo_box_layout = QVBoxLayout(grupo_box)
+        grupo_box_layout.setContentsMargins(10, 60, 10, 10)
+        grupo_box.setStyleSheet("font-size: 16px; font-weight: bold;")
+        caixa_options = {
+            'Abrir Caixa': lambda: self.stacked_widget.setCurrentWidget(self.create_details_page("Abrir Caixa")),
+            'Fechar Caixa': lambda: self.stacked_widget.setCurrentWidget(self.create_details_page("Fechar Caixa")),
+        
+            }
+        for option, action in caixa_options.items():
+            button = QPushButton(option)
+            button.setFixedWidth(150)
+            button.setStyleSheet("font-size: 14px; margin: 5px;")
+            button.clicked.connect(action)
+            grupo_box_layout.addWidget(button)
+
+        layout.addWidget(grupo_box, alignment=Qt.AlignmentFlag.AlignCenter)
+        return page
+    
     def create_ferramentas_page(self):
         page = QWidget()
         layout = QVBoxLayout(page)
@@ -140,7 +174,6 @@ class MyWindow(QMainWindow):
         ferramentas_options = {
             'Backup': lambda: self.stacked_widget.setCurrentWidget(self.create_details_page("Backup")),
             'Relatórios': lambda: self.stacked_widget.setCurrentWidget(self.create_details_page("Relatórios")),
-            'Estoque': lambda: self.stacked_widget.setCurrentWidget(self.create_details_page("Estoque")),
             'Configurações': lambda: self.stacked_widget.setCurrentWidget(self.create_details_page("Configurações")),
         }
 
