@@ -9,6 +9,8 @@ class Controller:
         self.app.exec()
 
 
+    #aqui está acionando as funções de cada botão do menu (Principal)
+
     def show_caixa_page(self):
         self.window.stacked_widget.setCurrentWidget(self.window.caixa_page)
 
@@ -21,7 +23,14 @@ class Controller:
     def show_ajuda_page(self):
         self.window.stacked_widget.setCurrentWidget(self.window.ajuda_page)
     
+    #Submenu actions
 
+    #Caixa
+    def show_caixa_venda_page(self):
+        self.window.stacked_widget.setCurrentWidget(self.window.caixa_venda_page)
+    
+    def show_fechamento_caixa_page(self):
+        self.window.stacked_widget.setCurrentWidget(self.window.fechamento_caixa_page)
 
 if __name__ == "__main__":
     controller = Controller()
