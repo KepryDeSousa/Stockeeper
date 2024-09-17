@@ -1,6 +1,7 @@
 from PyQt6.QtWidgets import QMainWindow, QApplication, QWidget, QVBoxLayout, QHBoxLayout, QStackedWidget, QPushButton, QLabel, QGroupBox
 from PyQt6.QtGui import QIcon, QPixmap
 from PyQt6.QtCore import Qt
+from PyQt6.QtWidgets import QLineEdit
 
 class MyWindow(QMainWindow):
     def __init__(self, controller):
@@ -128,18 +129,26 @@ class MyWindow(QMainWindow):
         group_box.setStyleSheet("font-size: 16px; font-weight: bold;")
 
         cadastro_options = {
-            'Produtos': lambda: self.stacked_widget.setCurrentWidget(self.create_details_page("Produtos")),
+           # 'Produtos': self.create_product_registration_page(),
             'Fornecedores': lambda: self.stacked_widget.setCurrentWidget(self.create_details_page("Fornecedores")),
             'Funcionários': lambda: self.stacked_widget.setCurrentWidget(self.create_details_page("Funcionários")),
             'Administrador': lambda: self.stacked_widget.setCurrentWidget(self.create_details_page("Administrador")),
         }
-
+        
         for option, action in cadastro_options.items():
             button = QPushButton(option)
             button.setFixedWidth(150)
             button.setStyleSheet("font-size: 14px; margin: 5px;")
             button.clicked.connect(action) # Connect the button to the action when clicked
             group_box_layout.addWidget(button)
+
+        
+        button = QPushButton(option)
+        button = QPushButton('Produtos')
+        button.setFixedWidth(150)
+        button.setStyleSheet("font-size: 14px; margin: 5px;")
+        button.clicked.connect(self.create_product_registration_page)
+        group_box_layout.addWidget(button)
 
         layout.addWidget(group_box, alignment=Qt.AlignmentFlag.AlignCenter)
         return page
@@ -148,7 +157,7 @@ class MyWindow(QMainWindow):
     def create_caixa_page(self):
         page = QWidget()
         layout = QVBoxLayout(page)# Vertical layout
-        label = QLabel("Caixa")
+        QLabel("Caixa")
 
         grupo_box= QGroupBox('Caixa')
         grupo_box_layout = QVBoxLayout(grupo_box)
@@ -247,4 +256,54 @@ class MyWindow(QMainWindow):
             group_box_layout.addWidget(button)
 
         layout.addWidget(group_box, alignment=Qt.AlignmentFlag.AlignCenter)
+        return page
+
+
+    #Functions to show the pages
+    def create_product_registration_page(self):
+        page = QWidget()
+        layout = QVBoxLayout(page)
+
+        group_box = QGroupBox("Cadastro de Produtos")
+        group_box_layout = QVBoxLayout(group_box)
+
+        nome_label = QLabel("Nome do Produto:")
+        nome_input = QLineEdit()
+        nome_input.setPlaceholderText("Digite o nome do produto")
+
+        categoria_label = QLabel("Categoria:")
+        categoria_input = QLineEdit()
+        categoria_input.setPlaceholderText("Digite a categoria do produto")
+
+        preco_label = QLabel("Preço:")
+        preco_input = QLineEdit()
+        preco_input.setPlaceholderText("Digite o preço do produto")
+
+        quantidade_label = QLabel("Quantidade:")
+        quantidade_input = QLineEdit()
+        quantidade_input.setPlaceholderText("Digite a quantidade em estoque")
+
+        salvar_button = QPushButton("Salvar")
+        salvar_button.setStyleSheet("background-color: #4CAF50; color: white; font-weight: bold;")
+        salvar_button.clicked.connect(lambda: self.save_product(
+            nome_input.text(), categoria_input.text(), preco_input.text(), quantidade_input.text()
+        ))
+
+        cancelar_button = QPushButton("Cancelar")
+        cancelar_button.setStyleSheet("background-color: #f44336; color: white; font-weight: bold;")
+        cancelar_button.clicked.connect(lambda: self.stacked_widget.setCurrentWidget(self.cadastro_page))
+
+        group_box_layout.addWidget(nome_label)
+        group_box_layout.addWidget(nome_input)
+        group_box_layout.addWidget(categoria_label)
+        group_box_layout.addWidget(categoria_input)
+        group_box_layout.addWidget(preco_label)
+        group_box_layout.addWidget(preco_input)
+        group_box_layout.addWidget(quantidade_label)
+        group_box_layout.addWidget(quantidade_input)
+        group_box_layout.addWidget(salvar_button)
+        group_box_layout.addWidget(cancelar_button)
+
+        layout.addWidget(group_box)
+
         return page
