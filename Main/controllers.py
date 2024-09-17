@@ -17,6 +17,9 @@ class Controller:
     def show_cadastro_page(self):
         self.window.stacked_widget.setCurrentWidget(self.window.cadastro_page)
 
+    def show_consultas_page(self):
+        self.window.stacked_widget.setCurrentWidget(self.window.consultas_page)
+
     def show_ferramentas_page(self):
         self.window.stacked_widget.setCurrentWidget(self.window.ferramentas_page)
 

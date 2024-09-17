@@ -35,8 +35,10 @@ class MyWindow(QMainWindow):
             'Início': lambda: self.stacked_widget.setCurrentWidget(self.start_page),
             'Caixa': self.controller.show_caixa_page,
             'Cadastro': self.controller.show_cadastro_page,
+            'Consultas': self.controller.show_consultas_page,
             'Ferramentas': self.controller.show_ferramentas_page,
             'Ajuda': self.controller.show_ajuda_page
+
         }
 
         self.menu_widget = QWidget()
@@ -64,14 +66,19 @@ class MyWindow(QMainWindow):
         self.stacked_widget = QStackedWidget()
         main_layout.addWidget(self.stacked_widget)
 
+        #Chamada das funções de cada botão do menu
         self.start_page = self.create_page("Bem-vindo ao Stockeeper")
         self.cadastro_page = self.create_cadastro_page()
         self.ferramentas_page = self.create_ferramentas_page()
         self.ajuda_page = self.create_ajuda_page()
         self.caixa_page = self.create_caixa_page()
+        self.consultas_page = self.create_consultas_page()
 
+
+        #Implementação das páginas
         self.stacked_widget.addWidget(self.start_page)
         self.stacked_widget.addWidget(self.caixa_page)
+        self.stacked_widget.addWidget(self.consultas_page)
         self.stacked_widget.addWidget(self.cadastro_page)
         self.stacked_widget.addWidget(self.ferramentas_page)
         self.stacked_widget.addWidget(self.ajuda_page)
@@ -106,7 +113,7 @@ class MyWindow(QMainWindow):
         return page
 
 
-    # The following functions are responsible for creating the pages for each menu option
+    # Menu 
 
 
 
@@ -162,6 +169,36 @@ class MyWindow(QMainWindow):
         layout.addWidget(grupo_box, alignment=Qt.AlignmentFlag.AlignCenter)
         return page
     
+    def create_consultas_page(self):
+        page = QWidget()
+        layout = QVBoxLayout(page)
+
+        group_box = QGroupBox("Consultas")
+
+        group_box_layout = QVBoxLayout(group_box)
+        group_box_layout.setContentsMargins(14, 68, 10, 10)
+        group_box.setStyleSheet("font-size: 16px; font-weight: bold;")
+        ferramentas_options = {
+            'Produtos': lambda: self.stacked_widget.setCurrentWidget(self.create_details_page("Produtos")),
+            'Vendas': lambda: self.stacked_widget.setCurrentWidget(self.create_details_page("Vendas")),
+            'Fornecedores': lambda: self.stacked_widget.setCurrentWidget(self.create_details_page("Fornecedores")),
+            'Funcionários': lambda: self.stacked_widget.setCurrentWidget(self.create_details_page("Funcionários")),
+            'Administrador': lambda: self.stacked_widget.setCurrentWidget(self.create_details_page("Administrador")),
+
+        }
+
+        for option, action in ferramentas_options.items():
+            button = QPushButton(option)
+            button.setFixedWidth(150)
+            button.setStyleSheet("font-size: 14px; margin: 5px;")
+            button.clicked.connect(action)
+            group_box_layout.addWidget(button)
+
+        layout.addWidget(group_box, alignment=Qt.AlignmentFlag.AlignCenter)
+        return page
+      
+    
+
     def create_ferramentas_page(self):
         page = QWidget()
         layout = QVBoxLayout(page)
