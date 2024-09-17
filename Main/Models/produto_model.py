@@ -27,16 +27,15 @@ class Produto:
         conn.close()
         return produtos
     
-'''
-def limpar_banco():
-    conn = sqlite3.connect('Main/Models/config.db/stockeeper.db')
-    cursor = conn.cursor()
+    @staticmethod
+    def limpar_banco():
+        conn = sqlite3.connect('Main/Models/config.db/stockeeper.db')
+        cursor = conn.cursor()
 
-    cursor.execute("DELETE FROM produto")
-    tabelas = cursor.fetchall()
-    conn.commit()
-    conn.close()
-'''
+        cursor.execute("DELETE FROM produto")
+        tabelas = cursor.fetchall()
+        conn.commit()
+        conn.close()
 
 if __name__ == '__main__':
     p1 = Produto('Coca-Cola', 5.0, 10)

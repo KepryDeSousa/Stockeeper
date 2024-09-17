@@ -33,7 +33,9 @@ def criar_tabelas():
     CREATE TABLE IF NOT EXISTS "fornecedor" (
       "id" INTEGER PRIMARY KEY AUTOINCREMENT UNIQUE,
       "nome" TEXT NOT NULL,
-      "categoria_produtos_id" INTEGER,
+      "categoria_produtos_id" INTEGER NULL,
+      "telefone" INTEGER NULL,
+      "email" TEXT NULL,
       FOREIGN KEY ("categoria_produtos_id") REFERENCES "categoria" ("id")
     );
 
@@ -41,8 +43,8 @@ def criar_tabelas():
       "id" INTEGER PRIMARY KEY AUTOINCREMENT UNIQUE,
       "nome" TEXT NOT NULL,
       "total" REAL NOT NULL,
-      "fornecedor_id" INTEGER,
-      "responsavel_id" INTEGER,
+      "fornecedor_id" INTEGER NULL,
+      "responsavel_id" INTEGER NULL,
       "produto_id" INTEGER,
       "data_compra" TEXT NOT NULL,
       FOREIGN KEY ("fornecedor_id") REFERENCES "fornecedor" ("id"),
