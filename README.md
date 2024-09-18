@@ -10,85 +10,77 @@ Objetivo: Desenvolver um sistema de ponto de venda (PDV) com foco em logística 
 Fase 1: Planejamento
 Requisitos Funcionais:
 
-- Gestão de produtos (adicionar, editar, remover, listar)
-- Gestão de funcionários
-- Registro de vendas e compras
-- Geração de relatórios de vendas e compras
-- Interface amigável e intuitiva
-
+Gestão de produtos (adicionar, editar, remover, listar)
+Gestão de funcionários
+Registro de vendas e compras
+Geração de relatórios de vendas e compras
+Interface amigável e intuitiva
 Requisitos Não Funcionais:
 
-- Utilização de SQLite3 para armazenamento de dados local
-- Interface gráfica responsiva e fluida utilizando QtPy
-- Operação offline
-
+Utilização de SQLite3 para armazenamento de dados local
+Interface gráfica responsiva e fluida utilizando QtPy
+Operação offline
 Desenho do Sistema:
 
-- Criar diagramas de classes e fluxogramas (já iniciado na imagem anexada)
-![alt text](UML's/StockKeeper.drawio.png)
+Criar diagramas de classes e fluxogramas (já iniciado na imagem anexada)
 
-- Definir a arquitetura de software (MVC - Model-View-Controller)
+Definir a arquitetura de software (MVC - Model-View-Controller)
 
-Fase 2: Desenvolvimento
+* Fase 2: Desenvolvimento
 Ciclos de Desenvolvimento Incrementais:
+
 Primeiro Ciclo:
 
-- Desenvolver a estrutura básica do banco de dados SQLite3
-- Implementar a interface básica com QtPy (janelas principais, navegação)
-- Criar a gestão de produtos (Estoque e Compra)
-
+Desenvolver a estrutura básica do banco de dados SQLite3
+Implementar a interface básica com QtPy (janelas principais, navegação)
+Criar a gestão de produtos (Estoque e Compra)
 Segundo Ciclo:
 
-- Implementar o registro de vendas e compras
-- Desenvolver a lógica para cálculo de relatórios
-- Ajustar a interface gráfica com base no feedback inicial
-
+Implementar o registro de vendas e compras
+Desenvolver a lógica para cálculo de relatórios
+Ajustar a interface gráfica com base no feedback inicial
 Terceiro Ciclo:
 
-- Implementar a geração de relatórios (PDF, CSV)
-- Adicionar funcionalidade de backup dos dados
-- Refatorar o código para otimização e limpeza
-
-Fase 3: Testes
+Implementar a geração de relatórios (PDF, CSV)
+Adicionar funcionalidade de backup dos dados
+Refatorar o código para otimização e limpeza
+* Fase 3: Testes
 Testes Unitários:
 
-- Cobrir as principais funcionalidades do sistema
-- Verificar a integração entre o banco de dados e a interface gráfica
-
+Cobrir as principais funcionalidades do sistema
+Verificar a integração entre o banco de dados e a interface gráfica
 Testes de Interface:
 
-- Testar a usabilidade da interface
-- Identificar possíveis melhorias na experiência do usuário
-
+Testar a usabilidade da interface
+Identificar possíveis melhorias na experiência do usuário
 Testes de Performance:
 
-- Verificar a responsividade da aplicação em diferentes configurações de hardware
-
-Fase 4: Implantação
+Verificar a responsividade da aplicação em diferentes configurações de hardware
+* Fase 4: Implantação
 Empacotamento:
 
-- Criar um instalador para a aplicação
-- Documentar o processo de instalação
-
+Criar um instalador para a aplicação
+Documentar o processo de instalação
 Treinamento:
 
-- Criar um manual de usuário
-- Realizar sessões de treinamento, se necessário
-
+Criar um manual de usuário
+Realizar sessões de treinamento, se necessário
 Suporte Pós-Implantação:
 
-- Monitorar a aplicação para correção de bugs
-- Implementar melhorias baseadas no feedback dos usuários
-## 3. Ferramentas Utilizadas
-* Desenvolvimento: Python 3.x, QtPy, SQLite3
-* Controle de Versão: Git 
-* Testes: Pytest, Testes de Interface com QTest
-* Documentação: Sphinx, Markdown para documentação técnica e de usuário
-## 4. Cronograma
-* Semana 1-2: Planejamento e definição de requisitos
-* Semana 3-6: Desenvolvimento do primeiro e segundo ciclo
-* Semana 7-8: Testes e ajustes
-* Semana 9: Implantação e entrega final
-## 5. Feedback e Iteração
-Ao final levar as merciarias e padarias para validação 
+Monitorar a aplicação para correção de bugs
+Implementar melhorias baseadas no feedback dos usuários
 
+## 3. Ferramentas Utilizadas
+Desenvolvimento: Python 3.x, QtPy, SQLite3
+Controle de Versão: Git
+Testes: Pytest, Testes de Interface com QTest
+Documentação: Sphinx, Markdown para documentação técnica e de usuário
+
+## 4. Cronograma
+Semana 1-2: Planejamento e definição de requisitos
+Semana 3-6: Desenvolvimento do primeiro e segundo ciclo
+Semana 7-8: Testes e ajustes
+Semana 9: Implantação e entrega final
+
+## 5. Feedback e Iteração
+Ao final do desenvolvimento, realizar sessões de validação com pequenos negócios, como mercearias e padarias, para obter feedback e realizar ajustes necessários.
