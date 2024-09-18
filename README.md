@@ -77,10 +77,7 @@ Testes: Pytest, Testes de Interface com QTest
 Documentação: Sphinx, Markdown para documentação técnica e de usuário
 
 ## 4. Cronograma
-Semana 1-2: Planejamento e definição de requisitos
-Semana 3-6: Desenvolvimento do primeiro e segundo ciclo
-Semana 7-8: Testes e ajustes
-Semana 9: Implantação e entrega final
+*** 
 
 ## 5. Feedback e Iteração
 Ao final do desenvolvimento, realizar sessões de validação com pequenos negócios, como mercearias e padarias, para obter feedback e realizar ajustes necessários.
