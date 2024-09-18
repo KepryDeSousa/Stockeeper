@@ -2,6 +2,7 @@ from PyQt6.QtWidgets import QMainWindow, QApplication, QWidget, QVBoxLayout, QHB
 from PyQt6.QtGui import QIcon, QPixmap
 from PyQt6.QtCore import Qt
 from PyQt6.QtWidgets import QLineEdit
+from Models.produto_model import Produto
 
 class MyWindow(QMainWindow):
     def __init__(self, controller):
@@ -87,6 +88,7 @@ class MyWindow(QMainWindow):
         self.setCentralWidget(central_widget)
 
 
+
     def toggle_menu(self):
         if self.menu_widget.width() == 0:
             self.menu_widget.setFixedWidth(200)
@@ -129,7 +131,7 @@ class MyWindow(QMainWindow):
         group_box.setStyleSheet("font-size: 16px; font-weight: bold;")
 
         cadastro_options = {
-           # 'Produtos': self.create_product_registration_page(),
+            'Produtos': self.show_product_registration_page,
             'Fornecedores': lambda: self.stacked_widget.setCurrentWidget(self.create_details_page("Fornecedores")),
             'Funcionários': lambda: self.stacked_widget.setCurrentWidget(self.create_details_page("Funcionários")),
             'Administrador': lambda: self.stacked_widget.setCurrentWidget(self.create_details_page("Administrador")),
@@ -143,17 +145,19 @@ class MyWindow(QMainWindow):
             group_box_layout.addWidget(button)
 
         
-        button = QPushButton(option)
-        button = QPushButton('Produtos')
-        button.setFixedWidth(150)
-        button.setStyleSheet("font-size: 14px; margin: 5px;")
-        button.clicked.connect(self.create_product_registration_page)
-        group_box_layout.addWidget(button)
-
+        '''      button = QPushButton(option)
+                button = QPushButton('Produtos')
+                button.setFixedWidth(150)
+                button.setStyleSheet("font-size: 14px; margin: 5px;")
+                button.clicked.connect(self.teste)
+                group_box_layout.addWidget(button)
+        '''
         layout.addWidget(group_box, alignment=Qt.AlignmentFlag.AlignCenter)
         return page
 
-
+  
+        return 'teste de click'
+    
     def create_caixa_page(self):
         page = QWidget()
         layout = QVBoxLayout(page)# Vertical layout
@@ -205,8 +209,6 @@ class MyWindow(QMainWindow):
 
         layout.addWidget(group_box, alignment=Qt.AlignmentFlag.AlignCenter)
         return page
-      
-    
 
     def create_ferramentas_page(self):
         page = QWidget()
@@ -258,52 +260,77 @@ class MyWindow(QMainWindow):
         layout.addWidget(group_box, alignment=Qt.AlignmentFlag.AlignCenter)
         return page
 
+    #Produtos : 
+    def show_product_registration_page(self):
+        # Cria a página de cadastro de produtos e adiciona ao QStackedWidget
+        product_page = self.create_product_registration_page()
 
-    #Functions to show the pages
+        # Verifica se a página já foi adicionada ao QStackedWidget
+        if not self.stacked_widget.indexOf(product_page) != -1:
+            self.stacked_widget.addWidget(product_page)  # Adiciona ao QStackedWidget se não estiver
+
+        # Exibe a página
+        self.stacked_widget.setCurrentWidget(product_page)
+        
     def create_product_registration_page(self):
         page = QWidget()
         layout = QVBoxLayout(page)
 
-        group_box = QGroupBox("Cadastro de Produtos")
-        group_box_layout = QVBoxLayout(group_box)
+        label = QLabel("Cadastro de Produtos")
+        label.setAlignment(Qt.AlignmentFlag.AlignCenter)
+        label.setStyleSheet("font-size: 18px; font-weight: bold; margin-top: 20px;")
+        layout.addWidget(label, alignment=Qt.AlignmentFlag.AlignCenter)
 
-        nome_label = QLabel("Nome do Produto:")
-        nome_input = QLineEdit()
-        nome_input.setPlaceholderText("Digite o nome do produto")
+        # Adicionar campos de entrada para o cadastro de produtos
+        self.product_name_input = QLineEdit()
+        self.product_name_input.setPlaceholderText("Nome do Produto")
+        layout.addWidget(self.product_name_input)
 
-        categoria_label = QLabel("Categoria:")
-        categoria_input = QLineEdit()
-        categoria_input.setPlaceholderText("Digite a categoria do produto")
+        self.product_price_input = QLineEdit()
+        self.product_price_input.setPlaceholderText("Preço")
+        layout.addWidget(self.product_price_input)
 
-        preco_label = QLabel("Preço:")
-        preco_input = QLineEdit()
-        preco_input.setPlaceholderText("Digite o preço do produto")
+        self.product_quantity_input = QLineEdit()
+        self.product_quantity_input.setPlaceholderText("Quantidade")
+        layout.addWidget(self.product_quantity_input)
 
-        quantidade_label = QLabel("Quantidade:")
-        quantidade_input = QLineEdit()
-        quantidade_input.setPlaceholderText("Digite a quantidade em estoque")
+        self.product_category_input = QLineEdit()
+        self.product_category_input.setPlaceholderText("Categoria_id")
+        layout.addWidget(self.product_category_input)
 
-        salvar_button = QPushButton("Salvar")
-        salvar_button.setStyleSheet("background-color: #4CAF50; color: white; font-weight: bold;")
-        salvar_button.clicked.connect(lambda: self.save_product(
-            nome_input.text(), categoria_input.text(), preco_input.text(), quantidade_input.text()
-        ))
-
-        cancelar_button = QPushButton("Cancelar")
-        cancelar_button.setStyleSheet("background-color: #f44336; color: white; font-weight: bold;")
-        cancelar_button.clicked.connect(lambda: self.stacked_widget.setCurrentWidget(self.cadastro_page))
-
-        group_box_layout.addWidget(nome_label)
-        group_box_layout.addWidget(nome_input)
-        group_box_layout.addWidget(categoria_label)
-        group_box_layout.addWidget(categoria_input)
-        group_box_layout.addWidget(preco_label)
-        group_box_layout.addWidget(preco_input)
-        group_box_layout.addWidget(quantidade_label)
-        group_box_layout.addWidget(quantidade_input)
-        group_box_layout.addWidget(salvar_button)
-        group_box_layout.addWidget(cancelar_button)
-
-        layout.addWidget(group_box)
+        # Botão para salvar o produto
+        save_button = QPushButton("Salvar Produto")
+        save_button.clicked.connect(self.save_product)
+        layout.addWidget(save_button)
 
         return page
+
+    def save_product(self):
+
+        # Obter os valores dos campos de entrada
+        product_name = self.product_name_input.text()
+        product_price = self.product_price_input.text()
+        product_quantity = self.product_quantity_input.text()
+        product_category = self.product_category_input.text()
+
+        # Validar os valores
+        if not product_name or not product_price:
+            print("Por favor, preencha todos os campos.")
+            return
+
+        try:
+            product_price = float(product_price)
+        except ValueError:
+            print("Por favor, insira um preço válido.")
+            return
+
+        if not product_category:
+            product_category = None
+
+        # Criar uma instância do modelo de produto e salvar no banco de dados
+        produto = Produto(nome=product_name, preco=product_price, quantidade=product_quantity, categoria_id=product_category)
+        produto.salvar()
+        return "Status : Operação concluida com sucesso"
+    
+
+       
