@@ -80,15 +80,15 @@ Suporte Pós-Implantação:
 - Monitorar a aplicação para correção de bugs
 - Implementar melhorias baseadas no feedback dos usuários
 ## 3. Ferramentas Utilizadas
-Desenvolvimento: Python 3.x, QtPy, SQLite3
-Controle de Versão: Git (GitHub ou GitLab)
-Testes: Pytest, Testes de Interface com QTest
-Documentação: Sphinx, Markdown para documentação técnica e de usuário
+* Desenvolvimento: Python 3.x, QtPy, SQLite3
+* Controle de Versão: Git 
+* Testes: Pytest, Testes de Interface com QTest
+* Documentação: Sphinx, Markdown para documentação técnica e de usuário
 ## 4. Cronograma
 * Semana 1-2: Planejamento e definição de requisitos
 * Semana 3-6: Desenvolvimento do primeiro e segundo ciclo
 * Semana 7-8: Testes e ajustes
 * Semana 9: Implantação e entrega final
 ## 5. Feedback e Iteração
-Ao final de cada ciclo de desenvolvimento, realizar revisões com stakeholders para ajustar o projeto conforme necessário.
+Ao final levar as merciarias e padarias para validação 
 
