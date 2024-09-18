@@ -1,2 +1,0 @@
-# Qss para python 
-pyside6-uic .\primeira.ui -o arquivo.py
