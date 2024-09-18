@@ -3,7 +3,7 @@ venv/
 env/
 lib/
 Lib/
- c:/Users/Jarom.marques/Documents/GitHub/Python_RAD/env/
+
 
 # Ignorar pacotes instalados pelo pip em um ambiente virtual local
 Lib/site-packages/
