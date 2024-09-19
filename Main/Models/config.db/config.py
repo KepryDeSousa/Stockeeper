@@ -67,9 +67,9 @@ def criar_tabelas():
     # Executar a criação das tabelas
     cursor.executescript(tabelas_sql)
 
-    # Confirmar mudanças
+
     conn.commit()
     conn.close()
 
-# Executar a função
+
 criar_tabelas()
