@@ -34,11 +34,13 @@ Primeiro Ciclo:
 Desenvolver a estrutura básica do banco de dados SQLite3
 Implementar a interface básica com QtPy (janelas principais, navegação)
 Criar a gestão de produtos (Estoque e Compra)
+
 Segundo Ciclo:
 
 Implementar o registro de vendas e compras
 Desenvolver a lógica para cálculo de relatórios
 Ajustar a interface gráfica com base no feedback inicial
+
 Terceiro Ciclo:
 
 Implementar a geração de relatórios (PDF, CSV)
