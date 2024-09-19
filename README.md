@@ -74,8 +74,9 @@ Implementar melhorias baseadas no feedback dos usuários
 
 ## 3. Ferramentas Utilizadas
 Desenvolvimento: Python 3.x, QtPy, SQLite3
+
 Controle de Versão: Git
-Testes: Pytest, Testes de Interface com QTest
+
 Documentação: Markdown para documentação técnica e de usuário
 
 ## 5. Feedback e Iteração
