@@ -76,8 +76,5 @@ Controle de Versão: Git
 Testes: Pytest, Testes de Interface com QTest
 Documentação: Sphinx, Markdown para documentação técnica e de usuário
 
-## 4. Cronograma
-*** 
-
 ## 5. Feedback e Iteração
 Ao final do desenvolvimento, realizar sessões de validação com pequenos negócios, como mercearias e padarias, para obter feedback e realizar ajustes necessários.
