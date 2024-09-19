@@ -79,5 +79,5 @@ Controle de Versão: Git
 
 Documentação: Markdown para documentação técnica e de usuário
 
-## 5. Feedback e Iteração
+## 4. Feedback e Iteração
 Ao final do desenvolvimento, realizar sessões de validação com pequenos negócios, como mercearias e padarias, para obter feedback e realizar ajustes necessários.
